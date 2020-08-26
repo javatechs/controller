@@ -47,6 +47,7 @@ audio_input_options = None
 audio_output_options = None
 video_input_options = None
 video_output_options = None
+video_monitor_stream = None
 video_start_count = 0
 
 brightness=None
@@ -87,6 +88,7 @@ def setup(robot_config):
     global video_input_format
     global video_input_options
     global video_output_options
+    global video_monitor_stream
 
     global brightness
     global contrast
@@ -124,6 +126,8 @@ def setup(robot_config):
         video_input_format = robot_config.get('ffmpeg', 'video_input_format')
         video_input_options = robot_config.get('ffmpeg', 'video_input_options')
         video_output_options = robot_config.get('ffmpeg', 'video_output_options')
+        if robot_config.has_option('ffmpeg', 'video_monitor_stream'):
+            video_monitor_stream = robot_config.get('ffmpeg', 'video_monitor_stream')
 
         if robot_config.has_option('ffmpeg', 'video_filter'):
             video_filter = robot_config.get('ffmpeg', 'video_filter')
@@ -264,7 +268,7 @@ def startVideoCapture():
                         ' -muxdelay 0.001 {out_options}'
                         ' -headers "Authorization: Bearer {robotKey}"'
                         ' http://{server}/transmit?name={channel}-video'
-                        ' -f mpegts udp://192.168.1.191:10002')
+                        ' {monitor_stream}')
                         
        videoCommandLine = videoCommandLine.format(ffmpeg=ffmpeg_location,
                             input_format=video_input_format,
@@ -275,6 +279,7 @@ def startVideoCapture():
                             video_codec=video_codec,
                             video_bitrate=video_bitrate,
                             out_options=video_output_options,
+                            monitor_stream=video_monitor_stream,
                             server=server,
                             channel=networking.channel_id,
                             xres=x_res, 
