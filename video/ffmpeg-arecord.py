@@ -29,7 +29,7 @@ def setupArecord(robot_config):
     arecord_format = robot_config.get('ffmpeg-arecord', 'arecord_format')
 
 def startAudioCapture():
-    audioCommandLine = ('{arecord} -D hw:{audio_hw_num} -c {audio_channels}'
+    audioCommandLine = ('{arecord} -c {audio_channels}'
                        ' -f {arecord_format} -r {audio_sample_rate} |'
                        ' {ffmpeg} -i - -ar {audio_sample_rate} -f mpegts'
                        ' -codec:a {audio_codec}  -b:a {audio_bitrate}k'

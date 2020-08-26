@@ -54,6 +54,9 @@ def say(*args):
     if os.name == 'nt':
         os.system('type ' + tempFilePath + ' | ' + espeak_command )
     else:
-        os.system('cat ' + tempFilePath + ' | ' + espeak_command + ' --stdout | aplay -D plughw:{}'.format(hw_num) )
+        # os.system('cat ' + tempFilePath + ' | ' + espeak_command + ' --stdout | aplay -q -D plughw:{}'.format(hw_num) )
+        mw_str = 'cat ' + tempFilePath + ' | ' + espeak_command + ' --stdout | aplay -q'
+        log.debug(mw_str)
+        os.system(mw_str)
 
-    os.remove(tempFilePath)    
+    os.remove(tempFilePath)

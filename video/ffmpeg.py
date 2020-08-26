@@ -263,7 +263,8 @@ def startVideoCapture():
                         ' -f mpegts -codec:v {video_codec} -b:v {video_bitrate}k -bf 0'
                         ' -muxdelay 0.001 {out_options}'
                         ' -headers "Authorization: Bearer {robotKey}"'
-                        ' http://{server}/transmit?name={channel}-video')
+                        ' http://{server}/transmit?name={channel}-video'
+                        ' -f mpegts udp://192.168.1.191:10002')
                         
        videoCommandLine = videoCommandLine.format(ffmpeg=ffmpeg_location,
                             input_format=video_input_format,
