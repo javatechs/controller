@@ -1,0 +1,68 @@
+[
+  {
+    "break": "line",
+    "label": "movement"
+  },
+  {
+    "label": "for-left",
+    "command": "forwardleft",
+    "hot_key": "t"
+  },
+  {
+    "label": "forward",
+    "command": "forward",
+    "hot_key": "y"
+  },
+  {
+    "label": "for-right",
+    "command": "forwardright",
+    "hot_key": "u"
+  },
+  {
+    "break": "line",
+    "label": ""
+  },
+  {
+    "label": "left",
+    "command": "left",
+    "hot_key": "f"
+  },
+  {
+    "label": "stop",
+    "command": "stop",
+    "hot_key": "g"
+  },
+  {
+    "label": "stop",
+    "command": "stop",
+    "hot_key": "h"
+  },
+  {
+    "label": "right",
+    "command": "right",
+    "hot_key": "j"
+  },
+  {
+    "break": "line",
+    "label": ""
+  },
+  {
+    "label": "back-left",
+    "command": "reverseleft",
+    "hot_key": "v"
+  },
+  {
+    "label": "back",
+    "command": "reverse",
+    "hot_key": "b"
+  },
+  {
+    "label": "back-right",
+    "command": "reverseright",
+    "hot_key": "n"
+  },
+  {
+    "break": "line",
+    "label": "commands"
+  }
+]
