@@ -45,9 +45,11 @@ class Sawppy:
         if robot_config.has_option('sawppy', 'user_slice'):
             self.user_slice = robot_config.getfloat('sawppy', 'user_slice')
         log.critical("Sawppy: speed= %f  angle= %f  motor_time= %f  user_slice= %f" % (self.driving_speed, self.turn_angle, self.motor_time, self.user_slice))
+        self.owners = robot_config.get('robot', 'owner').split(',')
 
         self.last_command_time = datetime.datetime.utcnow()
         self.last_command_user = None
+        self.prev_command_user = None
         self.last_user_time = datetime.datetime.utcnow()
         self.stopped = False
         self.lock = threading.Lock()
@@ -66,9 +68,19 @@ class Sawppy:
         user = args['user']['username']
 
         if (t - self.last_user_time).total_seconds > self.user_slice:
+            self.prev_command_user = self.last_command_user
             self.last_command_user = None
 
+        if user in self.owners:
+            log.debug("Sawppy owner (%s) took over" % user)
+            self.prev_command_user = None
+            self.last_command_user = user
+            self.last_user_time = t
+
         if self.last_command_user == None:
+            if user == self.prev_command_user:
+                if (t - self.last_user_time).total_seconds <= self.user_slice / 3:
+                    return
             self.last_command_user = user
             self.last_user_time = t
 
