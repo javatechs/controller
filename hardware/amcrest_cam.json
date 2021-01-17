@@ -1,0 +1,42 @@
+[
+  {
+    "break": "line",
+    "label": "Pan"
+  },
+  {
+    "label": "left",
+    "access": "owner",
+    "command": "ptz.start,Left",
+    "hot_key": "a"
+  },
+  {
+    "label": "up",
+    "command": "ptz.start,Up",
+    "hot_key": "w"
+  },
+  {
+    "label": "down",
+    "command": "ptz.start,Down",
+    "hot_key": "s"
+  },
+  {
+    "label": "right",
+    "access": "owner",
+    "command": "ptz.start,Right",
+    "hot_key": "d"
+  },
+  {
+    "break": "line",
+    "label": "Zoom"
+  },
+  {
+    "label": "In",
+    "command": "ptz.zoom,in",
+    "hot_key": "z"
+  },
+  {
+    "label": "Out",
+    "command": "ptz.zoom,out",
+    "hot_key": "x"
+  }
+]
