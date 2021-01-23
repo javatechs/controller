@@ -75,7 +75,7 @@ class Amcrest:
         if robot_config.has_option('amcrest', 'port'):
             self.port = robot_config.getint('amcrest', 'port')
 
-        self.user_slice = 60
+        self.user_slice = 60.0
         if robot_config.has_option('amcrest', 'user_slice'):
             self.user_slice = robot_config.getfloat('amcrest', 'user_slice')
 
@@ -113,7 +113,7 @@ class Amcrest:
         t = datetime.datetime.utcnow()
         user = args['user']['username']
 
-        if (t - self.last_user_time).total_seconds > self.user_slice:
+        if (t - self.last_user_time).total_seconds() > self.user_slice:
             self.prev_command_user = self.last_command_user
             self.last_command_user = None
 
@@ -125,7 +125,7 @@ class Amcrest:
 
         if self.last_command_user == None:
             if user == self.prev_command_user:
-                if (t - self.last_user_time).total_seconds <= self.user_slice / 3:
+                if (t - self.last_user_time).total_seconds() <= self.user_slice / 3:
                     return
             self.last_command_user = user
             self.last_user_time = t
