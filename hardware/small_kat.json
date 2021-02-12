@@ -1,26 +1,61 @@
 [
   {
     "break": "line",
-    "label": "movement"
+    "access": "owner",
+    "label": "* B E H A V I O R *"
+  },
+  {
+    "label": "nod",
+    "access": "owner",
+    "command": "@nod"
+  },
+  {
+    "label": "wag",
+    "access": "owner",
+    "command": "@wag"
+  },
+  {
+    "label": "sit",
+    "access": "owner",
+    "command": "@sit"
+  },
+  {
+    "label": "stomp",
+    "access": "owner",
+    "command": "@stomp"
+  },
+  {
+    "label": "meow",
+    "access": "owner",
+    "command": "@meow"
+  },
+  {
+    "label": "speak",
+    "access": "owner",
+    "command": "@speak"
+  },
+  {
+    "break": "line",
+    "label": "* M O V E M E N T *"
   },
   {
     "label": "head left",
-    "command": "hl",
+    "command": "@headleft",
     "hot_key": "4"
   },
   {
     "label": "head up",
-    "command": "hu",
+    "command": "@headup",
     "hot_key": "8"
   },
   {
     "label": "head down",
-    "command": "hd",
+    "command": "@headdown",
     "hot_key": "5"
   },
   {
     "label": "head right",
-    "command": "hr",
+    "command": "@headright",
     "hot_key": "6"
   },
   {
@@ -29,22 +64,22 @@
   },
   {
     "label": "forward",
-    "command": "f",
+    "command": "@forward",
     "hot_key": "w"
   },
   {
     "label": "back",
-    "command": "b",
+    "command": "@back",
     "hot_key": "s"
   },
   {
     "label": "left",
-    "command": "l",
+    "command": "@left",
     "hot_key": "a"
   },
   {
     "label": "right",
-    "command": "r",
+    "command": "@right",
     "hot_key": "d"
   },
   {
@@ -53,65 +88,22 @@
   },
   {
     "label": "tail left",
-    "command": "hl",
+    "command": "@tailleft",
     "hot_key": "1"
   },
   {
     "label": "tail up",
-    "command": "hu",
+    "command": "@tailup",
     "hot_key": "2"
   },
   {
     "label": "tail down",
-    "command": "hd",
+    "command": "@taildown",
     "hot_key": "0"
   },
   {
     "label": "tail right",
-    "command": "hr",
+    "command": "@tailright",
     "hot_key": "3"
-  },
-  {
-    "break": "line",
-    "label": "behavior"
-  },
-  {
-    "label": "nod",
-    "command": "nod",
-    "hot_key": ""
-  },
-  {
-    "label": "wag",
-    "command": "wag",
-    "hot_key": ""
-  },
-  {
-    "label": "sit",
-    "command": "sit",
-    "hot_key": ""
-  },
-  {
-    "label": "meow",
-    "command": "meow",
-    "hot_key": ""
-  },
-  {
-    "label": "speak",
-    "command": "speak",
-    "hot_key": ""
-  },
-  {
-    "break": "line",
-    "label": "misc"
-  },
-  {
-    "label": "example admin command",
-    "access": "owner",
-    "command": "example"
-  },
-  {
-    "label": "example timer",
-    "command": "timer-example",
-    "cooldown": 100
   }
 ]
