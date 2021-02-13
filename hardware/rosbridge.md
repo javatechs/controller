@@ -2,12 +2,18 @@
 The rosbridge 'hardware' integration to remo.tv is intended to be a 
 generic interface between [https://remo.tv](https://remo.tv) and ROS.
 
-Publishes the command JSON received from remo.tv to rosbridge.
+It publishes the JSON command received from remo.tv to rosbridge as a JSON string
+
+## Architecture: remo <-> ROS <-> Bowler Studio <-> SmallKat
+The rosbridge interface code **does NOT** require Bowler Studio nor SmallKat.
+They are included here as an example of what can be done.
+![Remo to Bowler Studio](./Remo to Bowler Studio.png)
 
 ## Installs
 - [Install remo.tv controller](https://github.com/javatechs/controller) software.
 - [Install rosbridge_server](http://wiki.ros.org/rosbridge_suite?distro=kinetic) ROS package.
 - [Install roslibpy](https://github.com/gramaziokohler/roslibpy) library.
+- Optional. [Install Bowler & SmallKat extensions.](https://github.com/javatechs/BowlerDebug/blob/master/src/main/groovy/LoadGameController2.md)
 
 ## Configure controller.conf
 - **type** or 'hardware' type should be rosbridge.
@@ -69,13 +75,13 @@ $
 - **/client_count** rosbridge client count.
 - **/connected_clients** rosbridge client list.
 
-## JSON Button Files
+## JSON Button Definitions
 remo.tv uses JSON to store its web interface button definitions.
 These buttons are particular to the robot or other device to be controlled.
 
 JSON file | Robot
 --------- | -----
-small_kat.json | SmallKat
+[small_kat.json](small_kat.json) | [SmallKat](https://hackaday.io/project/164727-smallkat-an-adorable-dynamics-oriented-robot-cat)
 
 ## Reference Links
 * [Rosbridge Suite](http://wiki.ros.org/rosbridge_suite)
