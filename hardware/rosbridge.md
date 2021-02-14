@@ -7,7 +7,7 @@ It publishes the JSON command received from remo.tv to rosbridge as a JSON strin
 ## Architecture: remo <-> ROS <-> Bowler Studio <-> SmallKat
 The rosbridge interface code **does NOT** require Bowler Studio nor SmallKat.
 They are included here as an example of what can be done.
-![Remo to Bowler Studio](./Remo to Bowler Studio.png)
+![Remo to Bowler Studio](Remo to Bowler Studio.png)
 
 ## Installs
 - [Install remo.tv controller](https://github.com/javatechs/controller) software.
