@@ -39,3 +39,4 @@ Be sure Amcrest camera is online.
 ## Reference Links
 * [Amcrest Python interface repository](https://github.com/tchellomello/python-amcrest/)
 * [Amcrest Python interface documentation](https://python-amcrest.readthedocs.io/)
+* [Amcrest Python API documentation](https://roslibpy.readthedocs.io/en/latest/reference/index.html)
